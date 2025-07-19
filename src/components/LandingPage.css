@@ -97,14 +97,15 @@ html.lenis body {
 }
 
 .fanta-section1 {
-  background-image: url('/Assets2/magicpattern-mesh-gradient-1722524507236.png');
+  /* background-image: url('/Assets2/magicpattern-mesh-gradient-1722524507236.png'); */
+  background-image: url('/public/images/greenBG1.jpeg');
   background-size: cover;
   background-position: center;
 }
 
 .fanta-section1 h1 {
   font-size: 20vw;
-  color: #fff;
+  color: rgba(255, 250, 245, 0.95);
   margin: 0;
 }
 
