@@ -220,7 +220,8 @@ const LandingPage = () => {
         <img id="fanta-orange2" src="/Assets2/png/Coconut2.png" alt="" />
         <img id="fanta-leaf2" src="/Assets2/leaf2.png" alt="" />
         <img id="fanta-bottle" src="/Assets2/png/blanco1.png" alt="" />
-        <img id="fanta-orange" src="/Assets2/orange.webp" alt="" />
+        {/* <img id="fanta-orange" src="/Assets2/orange.webp" alt="" /> */}
+        <img id="fanta-orange" src="/Assets2/matchaPot.png" alt="" />
       </div>
 
       <div className="fanta-section fanta-d-flex fanta-section2">
@@ -244,7 +245,7 @@ const LandingPage = () => {
       <div className="fanta-section fanta-d-flex fanta-section3">
         <div className="fanta-card fanta-d-flex-c">
           <div className="fanta-img-div fanta-d-flex">
-            <img id="fanta-pineapplecut" src="/Assets2/png/strawberry3.png" alt="" />
+            <img id="fanta-pineapplecut" src="/Assets2/sb1.png" alt="" />
             <img id="fanta-pineapple" src="/Assets2/png/blanco3.png" alt="" />
           </div>
           <h1 className="fanta-mainHeading">Stawberry Matcha</h1>
@@ -260,7 +261,7 @@ const LandingPage = () => {
         </div>
         <div className="fanta-card fanta-d-flex-c">
           <div className="fanta-img-div fanta-d-flex">
-            <img id="fanta-orangefruit" src="/Assets2/orangefruit.jpg" alt="" />
+            <img id="fanta-orangefruit" src="/Assets2/coffee1.png" alt="" />
             <img id="fanta-yellow" src="/Assets2/png/blanco2.png" alt="" />
           </div>
           <h1 className="fanta-mainHeading">Lemon</h1>

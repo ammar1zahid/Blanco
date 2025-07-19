@@ -97,10 +97,15 @@ html.lenis body {
 }
 
 .fanta-section1 {
-  /* background-image: url('/Assets2/magicpattern-mesh-gradient-1722524507236.png'); */
-  background-image: url('/public/images/greenBG1.jpeg');
+
+  background: 
+  linear-gradient(rgba(255, 255, 255, 0.192), rgba(255, 255, 255, 0.3)), 
+    url('/public/images/greenBG2.jpeg');
   background-size: cover;
   background-position: center;
+  background-repeat: no-repeat;
+
+
 }
 
 .fanta-section1 h1 {
@@ -195,7 +200,11 @@ html.lenis body {
 .fanta-section3 .fanta-card {
   width: 25vw;
   height: 70vh;
-  background-color: #fff2e5;
+  /* background-color: #fff2e5; */
+  background: 
+  linear-gradient(rgba(255, 255, 255, 0.192), rgba(255, 255, 255, 0.3)), 
+    url('/public/Assets2/blurbg3.jpg');
+    /* background-image: ("/public/images/blurbg2.jpg"); */
   padding: 1vw;
   gap: 2vh;
   border-radius: 20px;
