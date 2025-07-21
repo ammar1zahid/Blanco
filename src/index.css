@@ -45,12 +45,10 @@ body {
 }
 
 @utility radial-gradient {
-    background: radial-gradient(
-            circle at center,
+    background: radial-gradient(circle at center,
             #434343 0%,
             #000 50%,
-            transparent 100%
-    );
+            transparent 100%);
 }
 
 @utility masked-img {
@@ -83,13 +81,14 @@ body {
         ul {
             @apply flex-center lg:gap-12 gap-7;
         }
+
         /* nav img.logo {
             @apply mr-6 object-contain;
         } */
     }
 
     .noisy {
-                @apply absolute inset-0 size-full bg-[url("/images/noise.png")] z-10;
+        @apply absolute inset-0 size-full bg-[url("/images/noise.png")] z-10;
     }
 
     #hero {
@@ -222,7 +221,7 @@ body {
         .top-grid {
             @apply grid grid-cols-1 xl:grid-cols-12 gap-5 mb-5 md:px-0 px-5;
 
-            > div {
+            >div {
                 @apply rounded-3xl overflow-hidden h-72 relative;
             }
 
@@ -234,7 +233,7 @@ body {
         .bottom-grid {
             @apply grid grid-cols-1 md:grid-cols-12 gap-5 md:px-0 px-5;
 
-            > div {
+            >div {
                 @apply rounded-3xl overflow-hidden h-72 relative;
             }
 
@@ -289,70 +288,202 @@ body {
             @apply object-contain absolute -top-40 right-0 md:w-fit w-1/4;
         }
 
-            /* Menu Heading */
-    .menu-heading {
-      @apply font-modern-negra text-5xl md:text-6xl text-center mb-12;
-    }
+
+        /* Enhanced Menu Heading */
+        .menu-heading {
+            @apply font-modern-negra text-5xl md:text-7xl lg:text-8xl text-center mb-16 text-gradient;
+            letter-spacing: -0.02em;
+            line-height: 0.9;
+        }
 
 
-           .category-tabs {
-        @apply grid grid-cols-2 md:grid-cols-4 gap-6 mb-12 relative z-10 md:max-w-6xl md:mx-auto;
-      }
-
-        .cocktail-tabs {
-            @apply grid md:grid-cols-4 grid-cols-2 md:gap-20 gap-10 sm:mb-32 mb-20 relative z-10 md:max-w-6xl md:mx-auto;
+        /* Improved Category Tabs */
+        .category-tabs {
+            @apply grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8 mb-16 relative z-10 md:max-w-6xl md:mx-auto;
 
             button {
-                @apply md:text-3xl text-xl pb-2 cursor-pointer hover:text-yellow hover:border-yellow border-b-1 transition-colors font-modern-negra;
+                @apply md:text-lg text-base pb-3 cursor-pointer transition-all duration-300 ease-out border-b-2 border-transparent hover:border-yellow hover:text-yellow font-medium tracking-wide text-center;
+
+                &.active {
+                    @apply border-yellow text-yellow;
+                }
+
+                &:hover {
+                    transform: translateY(-2px);
+                }
+            }
+        }
+
+        /* Enhanced Item Tabs */
+        .cocktail-tabs {
+            @apply grid md:grid-cols-4 grid-cols-2 md:gap-12 gap-6 mb-20 relative z-10 md:max-w-6xl md:mx-auto;
+
+            button {
+                @apply md:text-2xl text-lg pb-3 cursor-pointer transition-all duration-300 ease-out border-b-1 border-transparent hover:text-yellow hover:border-yellow font-modern-negra text-center;
+
+                &.active {
+                    @apply text-yellow border-yellow;
+                }
+
+                &:hover {
+                    transform: translateY(-2px);
+                }
             }
         }
 
         .content {
             @apply flex flex-col justify-between items-center container mx-auto relative;
 
+            /* Enhanced Navigation Arrows */
             .arrows {
-                @apply flex items-center justify-between w-full absolute;
+                @apply flex items-center justify-between w-full absolute top-1/2 -translate-y-1/2 z-20;
 
                 button {
-                    @apply text-white hover:text-yellow cursor-pointer transition-colors max-w-36;
+                    @apply text-white/80 hover:text-yellow cursor-pointer transition-all duration-300 max-w-48 p-4 rounded-full hover:bg-white/5 backdrop-blur-sm;
+
+                    &:hover {
+                        transform: scale(1.05);
+                    }
 
                     span {
-                        @apply text-3xl font-modern-negra leading-none hidden md:block;
+                        @apply text-2xl md:text-3xl font-modern-negra leading-none hidden md:block;
+                    }
+
+                    /* Arrow icons for mobile */
+                    .arrow-icon {
+                        @apply block md:hidden text-3xl;
                     }
                 }
             }
         }
 
+        /* Enhanced Cocktail Image */
         .cocktail {
-            @apply flex-center mt-10;
+            @apply flex-center mt-10 relative;
 
             img {
-                @apply object-contain h-[60vh];
+                @apply object-contain h-[50vh] md:h-[60vh] lg:h-[70vh] rounded-2xl shadow-2xl transition-all duration-500 ease-out;
+                filter: brightness(1.1) contrast(1.05);
+            }
+
+            /* Image overlay for better contrast */
+            &::after {
+                content: '';
+                @apply absolute inset-0 rounded-2xl bg-gradient-to-t from-black/20 to-transparent pointer-events-none;
             }
         }
 
+        /* Enhanced Recipe Section */
         .recipe {
-            @apply flex max-md:flex-col gap-10 md:items-center justify-between w-full lg:absolute bottom-0;
+            @apply flex max-md:flex-col gap-8 md:gap-16 md:items-end justify-between w-full lg:absolute bottom-8 px-4 md:px-8;
 
             .info {
-                @apply space-y-4 lg:translate-y-20;
+                @apply space-y-6 lg:translate-y-16 flex-1;
 
                 #title {
-                    @apply font-modern-negra md:text-6xl text-3xl text-yellow max-w-40;
+                    @apply font-modern-negra md:text-5xl lg:text-6xl text-3xl text-yellow max-w-none leading-tight;
+                    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+                }
+
+                .price-badge {
+                    @apply inline-block bg-yellow text-black px-4 py-2 rounded-full font-bold text-lg mt-2;
                 }
             }
 
             .details {
-                @apply space-y-5 md:max-w-md text-left;
+                @apply space-y-6 md:max-w-lg lg:max-w-xl text-left flex-1 bg-black/40 backdrop-blur-sm p-6 rounded-2xl border border-white/10;
 
                 h2 {
-                    @apply md:text-5xl text-3xl font-serif;
+                    @apply md:text-4xl lg:text-5xl text-3xl font-serif leading-tight text-white mb-4;
                 }
 
                 p {
-                    @apply md:text-lg pe-5;
+                    @apply md:text-lg text-base leading-relaxed text-white/90;
+                    line-height: 1.6;
+                }
+
+                .description-label {
+                    @apply text-yellow font-semibold text-sm uppercase tracking-wider mb-2;
                 }
             }
+        }
+
+        @keyframes slideInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-50px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes slideInRight {
+            from {
+                opacity: 0;
+                transform: translateX(50px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        /* Apply animations to elements */
+        #menu .cocktail img {
+            animation: fadeInUp 0.8s ease-out;
+        }
+
+        #menu .recipe .info {
+            animation: slideInLeft 0.8s ease-out 0.2s both;
+        }
+
+        #menu .recipe .details {
+            animation: slideInRight 0.8s ease-out 0.4s both;
+        }
+
+        /* Responsive improvements */
+        @media (max-width: 768px) {
+            #menu .recipe {
+                @apply static mt-8 px-0;
+
+                .details {
+                    @apply p-4;
+                }
+
+                .info {
+                    @apply translate-y-0;
+                }
+            }
+
+            #menu .content .arrows {
+                @apply relative top-auto translate-y-0 mt-8;
+
+                button {
+                    @apply p-3 max-w-32;
+                }
+            }
+        }
+
+        /* Loading states and transitions */
+        .menu-item-entering {
+            opacity: 0;
+            transform: scale(0.95);
+        }
+
+        .menu-item-entered {
+            opacity: 1;
+            transform: scale(1);
+            transition: all 0.5s ease-out;
+        }
+
+        .menu-item-exiting {
+            opacity: 0;
+            transform: scale(1.05);
+            transition: all 0.3s ease-out;
         }
     }
 

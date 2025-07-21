@@ -85,11 +85,11 @@ const Navbar = () => {
     <nav className="navbar">
       <div className="nav-container">
         <a href="#home" className="logo-link">
-          <img
+          {/* <img
             src="/Assets2/png/font.png"
             alt="Blanco Logo"
             className="logo"
-          />
+          /> */}
         </a>
 
         <ul className="nav-links">
